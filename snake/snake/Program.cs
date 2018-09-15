@@ -11,20 +11,8 @@ namespace snake
         static void Main(string[] args)
         {
             Console.SetBufferSize( 80, 25 );
-
-
-            Point p1 = new Point(1, 3, '*');
-            p1.Draw();
-
-            Point p2 = new Point(4, 5, '#');
-            p2.Draw();
-
-            Point p3 = new Point(8, 10, '&');
-            p3.Draw();
-
-            Point p4 = new Point(12, 12, '$');
-            p4.Draw();
-
+  
+            // Рамка игры
             HorizontalLine UplineX = new HorizontalLine(0, 78, 0, '+');
             UplineX.Drow();
             HorizontalLine DownLineX = new HorizontalLine(0, 78, 24, '+');
@@ -33,6 +21,11 @@ namespace snake
             LeftlineY.Drow();
             Vertical RightLineY = new Vertical(0, 24, 78, '+');
             RightLineY.Drow();
+
+            // Наша змейка на старте
+            Point p = new Point(1, 3, '*');
+            Snake snake = new Snake(p, 4, Direction.RIGHT);
+            snake.Drow();
 
             Console.ReadLine();
         }
