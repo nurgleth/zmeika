@@ -24,7 +24,7 @@ namespace snake
             y = p.y;
             sym = p.sym;
         }
-        
+        // Метод движения точки по направлению direction
         public void Move(int offset, Direction direction)
         {
             if(direction == Direction.RIGHT)
@@ -44,7 +44,12 @@ namespace snake
                 y = y - offset;
             }
         }
-
+        // Метод удаления хвостовой точки для движения
+        public void Clear()
+        {
+            sym = ' ';
+            Draw();
+        }
 
         public void Draw()
         {
