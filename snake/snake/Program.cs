@@ -39,6 +39,8 @@ namespace snake
                 Thread.Sleep(100);
                 snake.Move();
             }
+
+            Console.CursorVisible = false;
         }
     }
 }

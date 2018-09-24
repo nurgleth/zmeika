@@ -33,7 +33,7 @@ namespace snake
             }
             else if(direction == Direction.LEFT)
             {
-                x = - offset;
+                x = x - offset;
             }
             else if(direction == Direction.UP)
             {
