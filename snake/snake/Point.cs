@@ -37,11 +37,11 @@ namespace snake
             }
             else if(direction == Direction.UP)
             {
-                y = y + offset;
+                y = y - offset;
             }
             else if (direction == Direction.DOWN)
             {
-                y = y - offset;
+                y = y + offset;
             }
         }
         // Метод удаления хвостовой точки для движения
@@ -50,7 +50,7 @@ namespace snake
             sym = ' ';
             Draw();
         }
-
+        // Метод вывода на экран символов
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
