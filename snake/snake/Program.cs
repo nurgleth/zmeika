@@ -12,7 +12,9 @@ namespace snake
         static void Main(string[] args)
         {
             Console.SetBufferSize( 80, 25 );
-  
+            //Убирает курсоры мегающие от змейки
+            Console.CursorVisible = false;
+
             // Рамка игры
             HorizontalLine UplineX = new HorizontalLine(0, 78, 0, '+');
             UplineX.Drow();
@@ -39,6 +41,7 @@ namespace snake
                 Thread.Sleep(100);
                 snake.Move();
             }
+ 
         }
     }
 }
