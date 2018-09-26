@@ -44,6 +44,13 @@ namespace snake
                 y = y + offset;
             }
         }
+
+        //проверка равенства координат головы мейки и еды
+        public bool IsHit(Point p)
+        {
+            return p.x == this.x && p.y == this.y;
+        }
+             
         // Метод удаления хвостовой точки для движения
         public void Clear()
         {
