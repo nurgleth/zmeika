@@ -31,7 +31,7 @@ namespace snake
             snake.Drow();
 
             // Метод создания еды для змейки
-            FoodCreator foodCreator = new FoodCreator(80, 25, "$");
+            FoodCreator foodCreator = new FoodCreator(79, 25, '$');
             Point food = foodCreator.CreateFood();
             food.Draw();
 
