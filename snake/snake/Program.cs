@@ -31,7 +31,7 @@ namespace snake
             snake.Drow();
 
             // Метод создания еды для змейки
-            FoodCreator foodCreator = new FoodCreator(79, 25, '$');
+            FoodCreator foodCreator = new FoodCreator(80, 25, '$');
             Point food = foodCreator.CreateFood();
             food.Draw();
 
@@ -46,6 +46,7 @@ namespace snake
                 {
                     snake.Move();
                 }
+
                 Thread.Sleep(100);
 
                 // бесконечный цыкл проверки какую кнопку нажали на клавиатуре в консоле
@@ -54,8 +55,6 @@ namespace snake
                     ConsoleKeyInfo button = Console.ReadKey();
                     snake.Handbutton(button.Key);
                 }
-                Thread.Sleep(100);
-                snake.Move();
 
             }
      
