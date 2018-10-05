@@ -15,15 +15,10 @@ namespace snake
             //Убирает курсоры мегающие от змейки
             Console.CursorVisible = false;
 
-            // Рамка игры
-            HorizontalLine UplineX = new HorizontalLine(0, 78, 0, '+');
-            UplineX.Drow();
-            HorizontalLine DownLineX = new HorizontalLine(0, 78, 24, '+');
-            DownLineX.Drow();
-            Vertical LeftlineY = new Vertical(0, 24, 0, '+');
-            LeftlineY.Drow();
-            Vertical RightLineY = new Vertical(0, 24, 78, '+');
-            RightLineY.Drow();
+            Walls walls = new Walls( 80, 25 );
+            walls.Drow();
+
+            
 
             // Наша змейка на старте
             Point p = new Point(4, 5, '*');
@@ -36,7 +31,11 @@ namespace snake
             food.Draw();
 
             while (true)
-            {
+            {// цикл проверки совпадения координат змейки и стены
+                if ( walls.IsHit(snake) || snake.IsHitTail() )
+                {
+                    break;
+                }
                 if(snake.Eat(food))
                 {
                     food = foodCreator.CreateFood();
